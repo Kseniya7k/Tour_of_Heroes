@@ -1,1 +1,14 @@
-<p>heroes works!</p>
+<h2>My Heroes</h2>
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+
+  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+    Add hero
+  </button>
+  <!--TODO: откуда здесь hero? -->
+  <button type="button" class="delete" title="delete hero"
+          (click)="delete(hero)">x</button>
+</div>
+
+
