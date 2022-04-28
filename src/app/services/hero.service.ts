@@ -14,14 +14,14 @@ export class HeroService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
-  }
-
   constructor(
     private http: HttpClient,
     private messageService: MessageService
   ) { }
+
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`);
+  }
 
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
